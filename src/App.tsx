@@ -1,10 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { useQuery } from "@apollo/client";
+import { gql } from "~/gql";
+
+const GET_PAGES = gql(`
+  query GET_PAGES {
+    pageCollection {
+      items {
+        _id
+        title
+      }
+    }
+  }
+`);
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const { loading, error, data } = useQuery(GET_PAGES);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error : {error.message}</p>;
 
   return (
     <>
@@ -28,8 +45,13 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <ul>
+        {data!.pageCollection!.items.map(
+          (page) => page && <li key={page._id}>{page.title}</li>
+        )}
+      </ul>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

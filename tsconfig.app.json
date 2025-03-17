@@ -6,6 +6,12 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/gql": ["./src/__generated__/"],
+      "~/gen": ["./src/__generated__/types.ts"],
+      "~/*": ["./src/*"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",

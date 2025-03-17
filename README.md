@@ -2,11 +2,16 @@
 
 To do:
 
-- [ ] Get static site generation working
+- [x] Get static site generation working
 - [ ] Migrate Nextjs files
 - [ ] Add Vitest
   - [ ] Testing Library
   - [ ] Playright
+
+## Development
+
+To view the Contentful GraphiQL, visit:
+https://app.contentful.com/spaces/[YOUR_SPACE_ID]/environments/develop/apps/app_installations/graphiql/
 
 ## Original README
 
