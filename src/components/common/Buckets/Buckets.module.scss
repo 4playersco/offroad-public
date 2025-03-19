@@ -1,0 +1,23 @@
+@use '../../../assets/styles/variables.scss' as *;
+@use '../../../assets/styles/mixins.scss' as *;
+
+.Buckets {
+  @include section;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @include breakpoint($bp-md) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: $space;
+  }
+
+  li {
+    background: $color-light;
+    padding: $space;
+  }
+}

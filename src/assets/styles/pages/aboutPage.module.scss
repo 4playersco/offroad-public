@@ -1,0 +1,5 @@
+@use '../mixins.scss' as *;
+
+.oldImg {
+  @include alignright;
+}
