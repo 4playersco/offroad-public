@@ -21,10 +21,9 @@ const Gallery = () => {
             return (
               <img
                 key={index}
+                className={styles.Img}
                 src={img}
                 alt={`Fourwheeling #${index + 1}`}
-                width="800"
-                height="600"
               />
             );
           })}

@@ -5,6 +5,11 @@
   @include mixins.darkSection('../../../assets/images/tracks.jpg');
 }
 
+.Img {
+  width: 100%;
+  height: auto;
+}
+
 :global {
   .nuka-container {
     max-width: 800px;
