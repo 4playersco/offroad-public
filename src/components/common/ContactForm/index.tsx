@@ -4,8 +4,11 @@ import styles from "./ContactForm.module.scss";
 import Button from "../../utility/Button";
 import Captcha from "../Captcha";
 
+const { VITE_NODE_ENV } = import.meta.env;
+const isDev = VITE_NODE_ENV === "development";
+
 const ContactForm = () => {
-  const [validRecaptcha, setValidRecaptcha] = useState(false);
+  const [validRecaptcha, setValidRecaptcha] = useState(isDev);
 
   const handleCaptchaChange = useCallback(
     (isValid: boolean) => {
@@ -40,9 +43,11 @@ const ContactForm = () => {
             name="message"
             required
           />
-          <div className={styles.recaptcha}>
-            <Captcha onChange={handleCaptchaChange} />
-          </div>
+          {!isDev && (
+            <div className={styles.recaptcha}>
+              <Captcha onChange={handleCaptchaChange} />
+            </div>
+          )}
           <input type="hidden" name="form-name" value="contact" />
         </div>
         <Button type="submit" disabled={isDisabled}>
