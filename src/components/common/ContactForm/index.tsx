@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { Formik, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router";
 
 import styles from "./ContactForm.module.scss";
@@ -67,15 +67,7 @@ const ContactForm = () => {
           const isDisabled = !validRecaptcha || isSubmitting;
 
           return (
-            <form
-              name="contact"
-              method="post"
-              action="/thanks"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              onSubmit={handleSubmit}
-              {...props}
-            >
+            <Form name="contact" onSubmit={handleSubmit} {...props}>
               <div className={styles.formFields}>
                 <Field
                   className={styles.field}
@@ -118,7 +110,7 @@ const ContactForm = () => {
               <Button type="submit" disabled={isDisabled}>
                 Send
               </Button>
-            </form>
+            </Form>
           );
         }}
       </Formik>
