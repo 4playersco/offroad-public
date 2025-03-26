@@ -4,6 +4,8 @@ import styles from "./LatestEvents.module.scss";
 import Container from "../../utility/Container";
 import Calendar from "../Calendar";
 
+const { VITE_API_URL } = import.meta.env;
+
 type Event = {
   id: string;
   startTime: string;
@@ -16,14 +18,19 @@ const LatestEvents = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://api.4-playersofcolorado.org/calendar/upcoming/9")
+    fetch(`${VITE_API_URL}/calendar/upcoming/9`)
       .then((response) => response.json())
       .then((results) => {
-        setUpcomingEvents(results.data);
+        setUpcomingEvents(results);
         setLoading(false);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error(error);
+        setLoading(false);
+      });
   }, []);
+
+  console.log("upcomingEvents", upcomingEvents);
 
   return (
     <div className={styles.LatestEvents}>

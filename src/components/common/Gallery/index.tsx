@@ -7,8 +7,6 @@ const Gallery = () => {
     return `/assets/images/gallery/slideshow-${index + 1}.jpg`;
   });
 
-  console.log("galleryImgs", galleryImgs);
-
   return (
     <div className={styles.Gallery}>
       <div className={styles.galleryWrapper}>
