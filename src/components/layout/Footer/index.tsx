@@ -1,4 +1,4 @@
-import { Link, useLocation, useResolvedPath } from "react-router";
+import { Link, useLocation } from "react-router";
 
 import styles from "./Footer.module.scss";
 import Container from "~/components/utility/Container";
