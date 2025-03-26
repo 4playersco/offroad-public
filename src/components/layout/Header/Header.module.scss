@@ -1,32 +1,33 @@
-@use '../../../assets/styles/variables.scss' as *;
-@use '../../../assets/styles/mixins.scss' as *;
+@use 'sass:color';
+@use '../../../assets/styles/variables.scss';
+@use '../../../assets/styles/mixins.scss';
 
 .header {
   background-repeat: no-repeat, repeat;
   background-size: cover, 100%;
   background-position: center;
-  background-color: $color-dark;
+  background-color: variables.$color-dark;
   background-image: linear-gradient(
     to bottom,
-    rgba($color-light, 1) 0%,
-    rgba($color-light, 0.8) 80%,
-    rgba($color-light, 0.5) 100%
+    rgba(variables.$color-light, 1) 0%,
+    rgba(variables.$color-light, 0.8) 80%,
+    rgba(variables.$color-light, 0.5) 100%
   );
   background-image: url('../../../assets/images/header.jpg');
   background-image: linear-gradient(
       to bottom,
-      rgba($color-light, 1) 0%,
-      rgba($color-light, 0.8) 80%,
-      rgba($color-light, 0.5) 100%
+      rgba(variables.$color-light, 1) 0%,
+      rgba(variables.$color-light, 0.8) 80%,
+      rgba(variables.$color-light, 0.5) 100%
     ),
     url('../../../assets/images/header.jpg');
-  color: $color-light;
+  color: variables.$color-light;
   text-align: center;
   position: relative;
-  border-bottom: 1px solid color.adjust($color, $lightness: 40%);
-  padding-bottom: $space * 1.6;
+  border-bottom: 1px solid color.adjust(variables.$color-gray-light, $lightness: 40%);
+  padding-bottom: variables.$space * 1.6;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     margin-bottom: 1.45rem;
     padding-bottom: 0;
     height: 400px;
@@ -34,32 +35,32 @@
 }
 
 .small {
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     height: 300px;
   }
 }
 
 .pageTitle {
   text-transform: uppercase;
-  border: 3px solid $color-dark;
+  border: 3px solid variables.$color-dark;
   display: inline-block;
   padding: 5px 8px 0px;
   line-height: 1;
-  font-family: $font-primary;
+  font-family: variables.$font-primary;
   margin: 0;
-  background: $color-light;
+  background: variables.$color-light;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     padding: 10px 16px 0px;
-    border: 5px solid $color-dark;
+    border: 5px solid variables.$color-dark;
   }
 }
 
 .hero {
-  color: $color-dark;
-  font-family: $font-primary;
+  color: variables.$color-dark;
+  font-family: variables.$font-primary;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     position: absolute;
     top: 70px;
     bottom: 0;
@@ -75,13 +76,13 @@
 .tagline {
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: $space;
+  margin-bottom: variables.$space;
   font-size: 1.4rem;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     font-size: 3rem;
     letter-spacing: 6px;
-    margin-bottom: $space * 1.6;
+    margin-bottom: variables.$space * 1.6;
   }
 }
 
@@ -89,12 +90,12 @@
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 0 0 $space;
+  margin: 0 0 variables.$space;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     font-size: 1.4rem;
     letter-spacing: 4px;
-    margin: 0 0 $space * 1.6;
+    margin: 0 0 variables.$space * 1.6;
   }
 }
 

@@ -1,18 +1,18 @@
-@use '../../../assets/styles/variables.scss' as *;
-@use '../../../assets/styles/mixins.scss' as *;
+@use '../../../assets/styles/variables.scss';
+@use '../../../assets/styles/mixins.scss';
 
 .container {
-  @include clearfix;
+  @include mixins.clearfix;
   margin: 0 auto;
-  max-width: $max-width;
-  padding: 0 ($space * 0.5);
+  max-width: variables.$max-width;
+  padding: 0 (variables.$space * 0.5);
 
-  @media (min-width: $bp-md) {
-    padding: 0 ($space * 0.75);
+  @media (min-width: variables.$bp-md) {
+    padding: 0 (variables.$space * 0.75);
   }
 }
 
 .containerSmall {
   @extend .container;
-  max-width: $content;
+  max-width: variables.$content;
 }

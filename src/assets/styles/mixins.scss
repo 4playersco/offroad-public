@@ -1,4 +1,4 @@
-@use './variables.scss' as *;
+@use 'variables.scss';
 
 @mixin breakpoint($bp, $direction: min) {
   @media (#{$direction}-width: $bp) {
@@ -19,7 +19,7 @@
   display: block;
   margin: 0 auto 10px;
 
-  @media (min-width: $bp-sm) {
+  @media (min-width: variables.$bp-sm) {
     clear: none;
     display: inline;
     float: right;
@@ -35,7 +35,7 @@
   display: block;
   margin: 0 auto 10px;
 
-  @media (min-width: $bp-sm) {
+  @media (min-width: variables.$bp-sm) {
     clear: none;
     display: inline;
     float: left;
@@ -56,29 +56,29 @@
   padding: 10px 0;
   text-align: center;
 
-  @include breakpoint($bp-md) {
+  @include breakpoint(variables.$bp-md) {
     padding: 50px 0;
   }
 }
 
 @mixin darkSection($imgSrc) {
-  @include section;
-  background-color: $color-gray-light;
+  background-color: variables.$color-gray-light;
   background-image: linear-gradient(
     to bottom,
-    rgba($color-gray-light, 0.95) 0%,
-    rgba($color-gray-light, 0.95) 100%
+    rgba(variables.$color-gray-light, 0.95) 0%,
+    rgba(variables.$color-gray-light, 0.95) 100%
   );
   background-image: url(#{$imgSrc});
   background-image: linear-gradient(
       to bottom,
-      rgba($color-gray-light, 0.95) 0%,
-      rgba($color-gray-light, 0.95) 100%
+      rgba(variables.$color-gray-light, 0.95) 0%,
+      rgba(variables.$color-gray-light, 0.95) 100%
     ),
     url(#{$imgSrc});
   background-repeat: no-repeat, repeat;
   background-position: center, center top;
   background-size: contain, 25%;
-  border-top: 1px solid $color-gray;
-  border-bottom: 1px solid $color-gray;
+  border-top: 1px solid variables.$color-gray;
+  border-bottom: 1px solid variables.$color-gray;
+  @include section;
 }

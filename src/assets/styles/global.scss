@@ -1,9 +1,9 @@
-@use './variables.scss' as *;
-@use './mixins.scss' as *;
+@use 'variables.scss';
+@use 'mixins.scss';
 
 html {
   box-sizing: border-box;
-  font-family: $font-default;
+  font-family: variables.$font-default;
   /* Root for rems
       62.5% takes 16px (browser default size for medium text) down to 10px
       ref: http://clagnut.com/blog/348/ */
@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  background: $color-light;
+  background: variables.$color-light;
   padding: 0;
   margin: 0;
   word-wrap: break-word;
@@ -28,17 +28,17 @@ body {
   -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  color: $color-gray;
+  color: variables.$color-gray;
   font-size: 14px;
   font-size: 1.4rem;
   line-height: 1.2;
 
-  @include breakpoint($bp-sm) {
+  @include mixins.breakpoint(variables.$bp-sm) {
     font-size: 16px;
     font-size: 1.6rem;
   }
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     font-size: 20px;
     font-size: 2rem;
   }
@@ -46,7 +46,7 @@ body {
 
 a {
   text-decoration: none;
-  color: $color-primary;
+  color: variables.$color-primary;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   transition: color 0.3s;
@@ -55,7 +55,7 @@ a {
 a:active,
 a:hover {
   outline-width: 0;
-  color: $color-primary-light;
+  color: variables.$color-primary-light;
 }
 
 .notFoundPage {
@@ -68,13 +68,13 @@ a:hover {
   top: 0;
   width: 100%;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: variables.$bp-md) {
     background-position: center;
-    padding-top: $content-vertical-padding;
+    padding-top: variables.$content-vertical-padding;
   }
 
   &:before {
-    background: $color-secondary;
+    background: variables.$color-secondary;
     content: '';
     height: 100%;
     left: 0;

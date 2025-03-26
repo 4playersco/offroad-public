@@ -1,10 +1,10 @@
-@use '../../../assets/styles/variables.scss' as *;
-@use '../../../assets/styles/mixins.scss' as *;
+@use '../../../assets/styles/variables.scss';
+@use '../../../assets/styles/mixins.scss';
 
 .Menu {
-  margin-bottom: $space * 1.6;
+  margin-bottom: variables.$space * 1.6;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     margin-bottom: 0;
     padding-top: 18px;
   }
@@ -13,7 +13,7 @@
 .list {
   display: none;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     padding: 0;
     text-transform: uppercase;
     display: flex;
@@ -32,7 +32,7 @@
   }
 
   a {
-    font-family: $font-primary;
+    font-family: variables.$font-primary;
     font-size: 1.3rem;
     font-weight: 700;
   }
@@ -42,10 +42,10 @@
   margin: 0;
   padding: 0;
   font-size: 2rem;
-  font-family: $font-primary;
+  font-family: variables.$font-primary;
   text-transform: uppercase;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     font-size: 3rem;
   }
 }
@@ -53,14 +53,14 @@
 .listBigNumber {
   font-size: 2.5rem;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     font-size: 3.5rem;
   }
 }
 
 .mobileMenu {
   display: flex;
-  margin: ($space / 2) 0;
+  margin: calc(variables.$space / 2) 0;
   justify-content: space-between;
 }
 
@@ -68,7 +68,7 @@
   text-align: left;
   margin: 0;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     display: none;
   }
 }
@@ -78,7 +78,7 @@
   margin: 0;
   padding: 0;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     display: none;
   }
 
@@ -88,7 +88,7 @@
   }
 
   a {
-    font-family: $font-primary;
+    font-family: variables.$font-primary;
     font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -100,7 +100,7 @@
 .active {
   display: block;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     display: none;
   }
 }
@@ -112,7 +112,7 @@
   font-size: 1rem;
   margin: 5px 0;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     display: none;
   }
 }

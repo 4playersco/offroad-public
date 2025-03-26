@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
-
+import { HelmetProvider } from "react-helmet-async";
 import {
   ApolloClient,
   ApolloLink,
@@ -19,7 +19,7 @@ import MembershipPage from "~/pages/Membership";
 import RunInfoPage from "~/pages/RunInfo";
 import ThanksPage from "~/pages/Thanks";
 
-import "~/assets/styles/styles.scss";
+import "~/assets/styles/global.scss";
 
 const {
   VITE_CONTENTFUL_SPACE_ID,
@@ -45,18 +45,20 @@ const client = new ApolloClient({
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ApolloProvider client={client}>
-      <BrowserRouter>
-        <Routes>
-          {/* <Route path="/news" element={<NewsPage />} /> */}
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/membership" element={<MembershipPage />} />
-          <Route path="/run-info" element={<RunInfoPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/thanks" element={<ThanksPage />} />
-          <Route path="/legal" element={<LegalPage />} />
-          <Route index path="/" element={<IndexPage />} />
-        </Routes>
-      </BrowserRouter>
+      <HelmetProvider>
+        <BrowserRouter>
+          <Routes>
+            {/* <Route path="/news" element={<NewsPage />} /> */}
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/membership" element={<MembershipPage />} />
+            <Route path="/run-info" element={<RunInfoPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/thanks" element={<ThanksPage />} />
+            <Route path="/legal" element={<LegalPage />} />
+            <Route index path="/" element={<IndexPage />} />
+          </Routes>
+        </BrowserRouter>
+      </HelmetProvider>
     </ApolloProvider>
   </StrictMode>
 );

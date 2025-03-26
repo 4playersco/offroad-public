@@ -1,7 +1,7 @@
-// @use '../variables.scss' as *;
-@use '../mixins.scss' as *;
+// @import '../variables.scss';
+@use '../mixins.scss';
 
 .createBtn {
-  @include aligncenter;
+  @include mixins.aligncenter;
   text-align: center;
 }

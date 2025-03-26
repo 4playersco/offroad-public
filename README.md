@@ -3,7 +3,12 @@
 To do:
 
 - [x] Get static site generation working
-- [ ] Migrate Nextjs files
+- [x] Migrate Nextjs files
+  - [ ] Fix gallery
+- [ ] Connect data to Contentful
+- [ ] Deploy to stage
+  - [ ] Test Contact Form
+- [ ] Make SSR/SSG
 - [ ] Add Vitest
   - [ ] Testing Library
   - [ ] Playright

@@ -1,20 +1,20 @@
-@use '../variables.scss' as *;
-@use '../mixins.scss' as *;
+@use '../variables.scss';
+@use '../mixins.scss';
 
 .cols {
   padding-top: 1px;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     padding-top: 0;
     display: grid;
-    grid-column-gap: $space;
+    grid-column-gap: variables.$space;
     grid-template-columns: 1fr 1fr;
   }
 
   img {
     margin-top: 10px;
 
-    @include breakpoint($bp-md) {
+    @include mixins.breakpoint(variables.$bp-md) {
       margin-top: 0;
     }
   }

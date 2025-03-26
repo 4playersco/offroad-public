@@ -1,23 +1,23 @@
-@use '../../../assets/styles/variables.scss' as *;
+@use '../../../assets/styles/variables.scss';
 
 .Button {
-  border: 3px solid $color-dark;
+  border: 3px solid variables.$color-dark;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
   padding: 10px 10px 7px;
-  font-family: $font-primary;
+  font-family: variables.$font-primary;
   text-transform: uppercase;
   font-weight: 900;
   font-size: 13px;
   letter-spacing: 2px;
-  color: $color-dark;
+  color: variables.$color-dark;
   transition: 0.3s;
   cursor: pointer;
 
   &:hover {
-    color: $color-light;
-    background: $color-dark;
+    color: variables.$color-light;
+    background: variables.$color-dark;
   }
 
   &:disabled {
@@ -25,23 +25,23 @@
   }
 
   &Ghost {
-    border: 3px solid $color-light;
+    border: 3px solid variables.$color-light;
     border-radius: 0;
     background: transparent;
     box-shadow: none;
     padding: 10px 10px 7px;
-    font-family: $font-primary;
+    font-family: variables.$font-primary;
     text-transform: uppercase;
     font-weight: 900;
     font-size: 13px;
     letter-spacing: 2px;
-    color: $color-light;
+    color: variables.$color-light;
     transition: 0.3s;
     cursor: pointer;
 
     &:hover {
-      color: $color-dark;
-      background: $color-light;
+      color: variables.$color-dark;
+      background: variables.$color-light;
     }
 
     &:disabled {

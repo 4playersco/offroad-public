@@ -1,4 +1,5 @@
-@use '../mixins.scss' as *;
+@use '../variables.scss';
+@use '../mixins.scss';
 
 .logo {
   border-radius: 5px;
@@ -7,8 +8,8 @@
   float: left;
   margin-right: 10px;
 
-  @include breakpoint($bp-md) {
-    @include alignleft;
+  @include mixins.breakpoint(variables.$bp-md) {
+    @include mixins.alignleft;
     padding: 0 0 50px;
     width: initial;
     height: initial;

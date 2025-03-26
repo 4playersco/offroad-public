@@ -1,34 +1,15 @@
-@use '../../../assets/styles/variables.scss' as *;
-@use '../../../assets/styles/mixins.scss' as *;
+@use '../../../assets/styles/variables.scss';
+@use '../../../assets/styles/mixins.scss';
 
 .Gallery {
-  @include darkSection('../../../assets/images/tracks.jpg');
-}
-
-.galleryWrapper {
-  max-width: 960px;
-  margin: 0 auto;
-  border: 2px solid $color-gray;
-}
-
-.list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: $space;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 $space;
-
-  li {
-    background: $color-light;
-    padding: $space;
-  }
+  @include mixins.darkSection('../../../assets/images/tracks.jpg');
 }
 
 :global {
-  .slider-control-bottomcenter {
-    @media (max-width: $bp-lg) {
-      display: none;
-    }
+  .nuka-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid variables.$color-gray;
+    box-sizing: content-box;
   }
 }

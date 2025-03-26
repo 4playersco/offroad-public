@@ -1,27 +1,28 @@
-@use '../../../assets/styles/variables.scss' as *;
-@use '../../../assets/styles/mixins.scss' as *;
+@use 'sass:color';
+@use '../../../assets/styles/variables.scss';
+@use '../../../assets/styles/mixins.scss';
 
 .Footer {
   text-align: center;
-  background: $color-dark;
+  background: variables.$color-dark;
 }
 
 .pageCap {
-  border-top: 1px solid color.adjust($color, $lightness: 40%);
+  border-top: 1px solid color.adjust(variables.$color-gray-light, $lightness: 40%);
   padding: 20px 0;
-  background: $color-light;
+  background: variables.$color-light;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     padding: 50px 0;
   }
 }
 
 .info {
   padding: 20px 0;
-  color: $color-light;
-  font-family: $font-primary;
+  color: variables.$color-light;
+  font-family: variables.$font-primary;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     padding: 50px 0;
   }
 }

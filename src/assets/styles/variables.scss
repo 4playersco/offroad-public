@@ -22,10 +22,8 @@ $max-width: 1200px;
 $content: 760px;
 
 // Fonts
-$font-icons: 'cf-net'; // Fontastic.me
-$font-default: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; // Typekit
-$font-primary: 'Josefin Sans', $font-default; // TypeKit
-$font-secondary: 'Merriweather', Georgia, 'Times New Roman', serif; // TypeKit
+$font-default: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; // Google Fonts
+$font-primary: 'Josefin Sans', $font-default; // Google Fonts
 
 // Typography
 $space: 20px;

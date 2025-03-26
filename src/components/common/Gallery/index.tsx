@@ -1,42 +1,38 @@
 import { Carousel } from "nuka-carousel";
 
-import Container from "~/components/utility/Container";
-import { getGalleryImages } from "~/actions";
-
 import styles from "./Gallery.module.scss";
-import { useEffect, useState } from "react";
 
 const Gallery = () => {
-  const [galleryImgs, setGalleryImages] = useState<string[]>([]);
-  const [loading, setLoading] = useState(true);
+  const galleryImgs = [...new Array(15)].map((_, index) => {
+    return `/assets/images/gallery/slideshow-${index + 1}.jpg`;
+  });
 
-  useEffect(() => {
-    const loadFiles = async () => {
-      setLoading(true);
-      const files = await getGalleryImages();
-      setGalleryImages(files);
-      setLoading(false);
-    };
-    loadFiles();
-  }, []);
+  console.log("galleryImgs", galleryImgs);
 
   return (
-    <Container>
-      {" "}
-      <div className={styles.Gallery} />
+    <div className={styles.Gallery}>
       <div className={styles.galleryWrapper}>
-        {!loading && (
-          <Carousel autoplay={true} showDots={true}>
-            {galleryImgs.map((img, index) => {
-              // const { fluid } = img.node.childImageSharp;
-              return (
-                <img key={index} src={img} alt={`Fourwheeling #${index + 1}`} />
-              );
-            })}
-          </Carousel>
-        )}
+        <Carousel
+          autoplay={true}
+          showDots={true}
+          showArrows="hover"
+          wrapMode="wrap"
+          swiping={true}
+        >
+          {galleryImgs.map((img, index) => {
+            return (
+              <img
+                key={index}
+                src={img}
+                alt={`Fourwheeling #${index + 1}`}
+                width="800"
+                height="600"
+              />
+            );
+          })}
+        </Carousel>
       </div>
-    </Container>
+    </div>
   );
 };
 

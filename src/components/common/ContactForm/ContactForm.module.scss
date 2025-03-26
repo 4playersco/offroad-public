@@ -1,40 +1,40 @@
-@use '../../../assets/styles/variables.scss' as *;
-@use '../../../assets/styles/mixins.scss' as *;
+@use '../../../assets/styles/variables.scss';
+@use '../../../assets/styles/mixins.scss';
 
 .ContactForm {
-  margin-top: -($space / 2);
+  margin-top: -(calc(variables.$space / 2));
 
-  @include breakpoint($bp-md) {
-    margin-bottom: $space;
+  @include mixins.breakpoint(variables.$bp-md) {
+    margin-bottom: variables.$space;
   }
 }
 
 .formFields {
-  margin-bottom: ($space / 2);
+  margin-bottom: calc(variables.$space / 2);
 
-  @include breakpoint($bp-md) {
-    margin-bottom: $space;
+  @include mixins.breakpoint(variables.$bp-md) {
+    margin-bottom: variables.$space;
   }
 }
 
 .field {
   display: block;
   width: 100%;
-  margin-top: $space / 2;
+  margin-top: calc(variables.$space / 2);
   padding: 5px;
   font-size: 12px;
   text-transform: uppercase;
-  font-family: $font-default;
-  border: 1px solid $color-gray-light;
+  font-family: variables.$font-default;
+  border: 1px solid variables.$color-gray-light;
   border-radius: 0;
 
-  @include breakpoint($bp-md) {
-    margin-top: $space;
+  @include mixins.breakpoint(variables.$bp-md) {
+    margin-top: variables.$space;
   }
 }
 
 .error {
-  color: $color-primary;
+  color: variables.$color-primary;
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
@@ -42,5 +42,5 @@
 }
 
 .recaptcha {
-  margin: $space auto;
+  margin: variables.$space auto;
 }

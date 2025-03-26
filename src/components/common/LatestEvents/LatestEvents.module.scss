@@ -1,9 +1,10 @@
-@use '../../../assets/styles/variables.scss' as *;
-@use '../../../assets/styles/mixins.scss' as *;
+@use '../../../assets/styles/variables.scss';
+@use '../../../assets/styles/mixins.scss';
 
 .LatestEvents {
-  @include darkSection('../../../assets/images/tracks.jpg');
   color: white;
+
+  @include mixins.darkSection('../../../assets/images/tracks.jpg');
 
   a {
     color: white;
@@ -16,16 +17,16 @@
   padding: 0;
   margin: 0;
 
-  @include breakpoint($bp-md) {
+  @include mixins.breakpoint(variables.$bp-md) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: $space;
+    grid-gap: variables.$space;
   }
 
-  @include breakpoint($bp-lg) {
+  @include mixins.breakpoint(variables.$bp-lg) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: $space;
+    grid-gap: variables.$space;
   }
 }
 
@@ -37,18 +38,18 @@
 }
 
 .btn {
-  margin-top: $space;
+  margin-top: variables.$space;
 }
 
 .heading {
-  color: $color-light;
+  color: variables.$color-light;
   margin-top: 0;
 }
 
 .eventHeading {
-  margin: 0 0 0 $space;
+  margin: 0 0 0 variables.$space;
   display: flex;
   align-items: center;
   text-align: left;
-  color: $color-light;
+  color: variables.$color-light;
 }
