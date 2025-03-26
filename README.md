@@ -1,13 +1,15 @@
 # React + TypeScript + Vite
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/783cbc1b-e0f1-473c-a24a-f091993c1b93/deploy-status)](https://app.netlify.com/sites/4-players-next/deploys)
+
 To do:
 
 - [x] Get static site generation working
 - [x] Migrate Nextjs files
-  - [ ] Fix gallery
-- [ ] Connect data to Contentful
+  - [x] Fix gallery
 - [ ] Deploy to stage
   - [ ] Test Contact Form
+- [ ] Connect data to Contentful
 - [ ] Make SSR/SSG
 - [ ] Add Vitest
   - [ ] Testing Library
