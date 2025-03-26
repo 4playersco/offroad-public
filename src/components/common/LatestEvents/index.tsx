@@ -30,8 +30,6 @@ const LatestEvents = () => {
       });
   }, []);
 
-  console.log("upcomingEvents", upcomingEvents);
-
   return (
     <div className={styles.LatestEvents}>
       <Container>
