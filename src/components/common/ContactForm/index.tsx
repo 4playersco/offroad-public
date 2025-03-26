@@ -41,7 +41,7 @@ const ContactForm = () => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting, setStatus }) => {
-          fetch("/", {
+          fetch("/assets/icons/favicon-32x32.png", {
             method: "POST",
             headers: {
               "Content-Type": "application/x-www-form-urlencoded",
